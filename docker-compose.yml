@@ -1,0 +1,14 @@
+services:
+  etl:
+    build: .
+    container_name: parallel_etl
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    volumes:
+      - etl_logs:/app/cron
+
+volumes:
+  etl_logs:
