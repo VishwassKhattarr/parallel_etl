@@ -1,5 +1,5 @@
 # ---- Stage 1: build the C++ ETL engine for Linux ----
-FROM ubuntu:24.04 AS engine-build
+FROM node:20-slim AS engine-build
 RUN apt-get update && apt-get install -y --no-install-recommends \
     g++ cmake make libpq-dev ca-certificates \
     && rm -rf /var/lib/apt/lists/*
